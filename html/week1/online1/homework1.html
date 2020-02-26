@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS商品详情展示</title>
+		
+		<style type="text/css">
+			div {
+				/*设置左浮动效果*/
+				float: left;
+				/*设置文字行高*/
+				line-height: 26px;
+				/*设置宽度*/
+				width: 250px;
+			}
+			
+			img {
+				float: left;
+				/*设置外边距上下为0，左右为10px*/
+				margin: 0 10px;
+				width: 390px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<img src="../../img/sofa.png"  onclick="clickMe()"/>
+		<div id="demo"><h2>北欧简约现代沙发床</h2>
+		包含件数：10<br />
+		编号：0707007<br />
+		规格：米白色B款【1012三人位】
+		点击图片查看详细说明
+		</div>
+		<script type="text/javascript">
+			function clickMe() {
+				str = '<h2>北欧简约现代沙发床</h2>根据美国BIFMA标准，模拟220斤体重的人，按照平均每日坐沙发16次估算座位耐久性，20年不塌陷。按照欧盟严苛的甲醛检测标准，主材甲醛释放符合欧盟相关国家标准。采用欧洲及国内通用方法测试光照色牢度，评估结果为不易褪色。';
+				document.getElementById("demo").innerHTML = str;
+			}
+		</script>
+	</body>
+</html>
