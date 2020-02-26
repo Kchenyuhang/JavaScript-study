@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript核心对象</title>
+    <script></script>
+  </head>
+  <body>
+    <script>
+      //string对象
+      /*
+                  String 对象用于处理文本（字符串）
+                  String 对象创建方法： new String()
+                  */
+      var txt = new String("string");
+      // 或者更简单方式：
+      var txt = "string";
+
+      //String对象方法
+      var str1 = "Hello, Nier";
+      var a = str1.toLowerCase(); // 把字符串转为小写
+      var b = str1.toUpperCase(); // 吧字符串转为大写
+      var c = " Hello world ".trim(); //去掉字符串两边的空白
+
+      var str2 = "Hello world, welcome to the w3cschool.";
+      var x = str2.indexOf("welcome"); // 13
+      var y = str2.indexOf("loen"); // -1
+      var str3 = "Mr Blue has a blue house and a blue car and a blue hat";
+      // 将字符串中首次出现的blue替换成red
+      var m = str3.replace("blue", "red"); //Mr Blue has a red house and a blue car and a blue hat
+      // 用正则匹配字符串中所有出现的blue并替换成red
+      var n = str3.replace(/blue/g, "red"); //Mr red has a red house and a red car and a red hat
+      var str4 = "Hello world!";
+      // document.write(str4.substring(3) + "<br>");
+      // document.write(str4.substring(3, 7));
+
+      //Window对象
+      //Window 对象属性
+      var winInnerHeight = window.innerHeight; //返回窗口的文档显示区的高度。
+      var winInnerWidth = window.innerWidth; //返回窗口的文档显示区的宽度。
+      var winOuterWidth = window.outerWidth; // 返回窗口的外部宽度，包含工具条与滚动条。
+      var winOuterHeight = window.outerHeight; // 返回窗口的外部高度，包含工具条与滚动条。
+      var winScreenLeft = window.screenLeft; // 返回相对于屏幕窗口的x坐标
+      var winScreenTop = window.screenTop; // 返回相对于屏幕窗口的y坐标
+
+      //Window 对象方法
+      /*
+            alert("hello world");
+            等价于
+            window.alert('hello world');
+
+            window.open(URL, name, specs, replace);
+            function open_win() {
+              window.open("http://www.baidu.com");
+            }
+            function openWin() {
+              myWindow = window.open("", "", "width=200,height=100");
+              myWindow.document.write("<p>这是'我的窗口'</p>");
+              myWindow.focus();
+            }
+            */
+
+      //setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式。
+      /*
+            setTimeout(function() {
+              alert("Hello");
+            }, 3000); //3秒
+            */
+      //实例:打开一个新窗口，3 秒后将该窗口关闭
+      // var myWindow = window.open("", "", "width=200, height=100");
+      // myWindow.document.write("<p>这是一个新窗口'</p>");
+      // setTimeout(function() {
+      //   myWindow.close();
+      // }, 3000);
+
+      //实例: 使用 clearTimeout() 来阻止函数的执行
+      // var myVar;
+      // function myFunction() {
+      //   myVar = setTimeout(function() {
+      //     alert("Hello");
+      //   }, 3000);
+      // }
+      // function myStopFunction() {
+      //   clearTimeout(myVar);
+      // }
+
+      //JSON实例
+      /*
+      JSON 数组
+      JSON 数组保存在中括号内。
+      就像在 JavaScript 中, 数组可以包含对象
+      */
+      {
+        "sites"[
+          /*
+          JSON 数据格式为 键/值 对，就像 JavaScript 对象属性。
+          键/值对包括字段名称（在双引号中），后面一个冒号，然后是值
+          "name":"JavaScript"
+          */
+          //JSON对象
+          ({ name: "baidu", url: "www.baidu.com" },
+          { name: "Google", url: "www.google.com" },
+          { name: "Taobao", url: "www.taobao.com" })
+        ];
+      }
+
+      //JSON.parse() 方法
+
+      //实例
+      // var text =
+      //   '{"employees":[' +
+      //   '{"name":"baidu","site":"http://www.baidu.com" },' +
+      //   '{"name":"Google","site":"http://www.Google.com" },' +
+      //   '{"name":"Taobao","site":"http://www.taobao.com" }]}';
+      // obj = JSON.parse(text);
+      // document.getElementById("demo").innerHTML =
+      //   obj.employees[1].name + " " + obj.employees[1].site;
+
+      //实例 带 reviver 的案例
+      // JSON.parse('{"p": 5, "s": 1.5, "t": -3}', function(k, v) {
+      //   if (k === "") return v; // 如果到了最顶层，则直接返回属性值，
+      //   return v * 2; // 否则将属性值变为原来的 2 倍。
+      // }); // {"p": 10, "s": 3, "t": -6}
+
+      //实例
+      // JSON.parse('{"1": 1, "2": 2,"3": {"4": 4, "5": {"6": 6}}}', function(k, v) {
+      //   console.log(k); // 输出当前的属性名，从而得知遍历顺序是从内向外的，
+      //   // 最后一个属性名会是个空字符串。
+      //   return v; // 返回原始属性值，相当于没有传递 reviver 参数。
+      // });
+
+      //JSON.stringify() 方法
+      // var str = { name: "baidu", site: "http://www.baidu.com" };
+      // str_pretty1 = JSON.stringify(str);
+      // document.write("只有一个参数情况：");
+      // document.write("<br>");
+      // document.write("<pre>" + str_pretty1 + "</pre>");
+      // document.write("<br>");
+      // str_pretty2 = JSON.stringify(str, null, 4); //使用四个空格缩进
+      // document.write("使用参数情况：");
+      // document.write("<br>");
+      // document.write("<pre>" + str_pretty2 + "</pre>"); // pre 用于格式化输出
+
+      //Math 对象属性
+      // console.log(Math.PI); // -> 3.141592653589793
+
+      //计算一个数字的平方根。
+      var number = Math.sqrt(4);
+      // console.log(number) // -> 2
+      // var n = prompt("请输入一个数字:", "");
+      var answer = Math.sqrt(n);
+      // alert("数字" + n + " 的平方根是: " + answer);
+
+      /*
+      floor() 方法
+      **Math.floor()** 返回小于或等于一个给定数字的最大整数。
+      **Math.floor()** 向下取整
+      Math.floor(45.95); // 45
+      Math.floor(45.05); // 45
+      Math.floor(4); // 4
+      Math.floor(-45.05); // -46
+      Math.floor(-45.95); // -46
+      */
+
+      /*
+      Math.random() 返回介于 0（包含） ~ 1（不包含） 之间的一个随机数：
+      实例, 返回 1 到 10 之间的一个随机数:
+      Math.floor((Math.random()*10)+1);
+      **Math.round()** 返回一个数字四舍五入后最接近的整数。
+      x = Math.round(20.49); //20
+      x = Math.round(20.5); //21
+      x = Math.round(-20.5); //-20
+      x = Math.round(-20.51); //-21
+      */
+
+      //时间对象
+      /*
+      Date对象使用
+      日期对象用于处理日期和时间。
+      日期由 年，月，日，时，分，秒和毫秒组成。
+      使用 new Date() , 将创建一个存储当前日期和时间的日期对象。
+      var d = new Date(); //d 存储了当前的日期和时间
+      初始化日期的其他方法允许从指定的日期和时间创建新的日期对象。
+      new Date(milliseconds) // 毫秒
+      new Date(dateString) // 日期字符串
+      new Date(year, month, day, hours, minutes, seconds, milliseconds) //年，月，日，时，分，秒和毫秒
+      */
+      //
+      //Fri Jan 02 1970 08:00:00 GMT+0800 (中国标准时间)
+      var d1 = new Date(86400000);
+      //Thu Oct 19 2017 15:56:00 GMT+0800 (中国标准时间)
+      var d2 = new Date("October 19, 2017 15:56:00");
+      //Sat Jun 11 1988 11:42:00 GMT+0800 (中国标准时间)
+      var d3 = new Date(88, 5, 11, 11, 42, 0, 0);
+
+      //Date对象的方法
+      //写一个程序,每秒打印一次当前浏览器的时间:
+      function printTime() {
+        var d = new Date();
+        var hours = d.getHours();
+        var mins = d.getMinutes();
+        var secs = d.getSeconds();
+        document.body.innerHTML = hours + ":" + mins + ":" + secs;
+      }
+      setInterval(printTime, 1000); // setInterval 第二个参数单位是 毫秒
+    </script>
+  </body>
+</html>

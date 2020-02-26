@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript概述</title>
+    <!-- 为了使HTML显示不会被脚本加载阻止，可将脚本放在元素的底部改善页面加载。 -->
+    <!-- <script src="/js/demo.js"></script> -->
+    <script>
+      //弹出警告框
+      window.alert("警告框");
+    </script>
+  </head>
+  <body>
+    <h1 id="title"></h1>
+    <p id="concent"></p>
+    <script>
+      //将内容写到 HTML 文档中
+      //使用HTML标签来格式化JavaScript中的文本
+      //   document.write("<h1>Hello JavaScript!</h1>");
+      /*
+      下面的这些代码会输出
+      一个标题和一个段落
+      并将代表主页的开始
+      */
+      //输出标题
+      document.getElementById("title").innerHTML = "欢迎来到我的主页";
+      //输出段落
+      document.getElementById("concent").innerHTML = "这是我的第一个段落";
+      //写入到浏览器的控制台
+      console.log(5 + 6);
+    </script>
+  </body>
+</html>

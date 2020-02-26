@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript基本概念</title>
+    <script>
+      //使用变量
+      var str = "你好 JavaScript";
+      //   document.write(str);
+    </script>
+  </head>
+
+  <body>
+    <script>
+      //变量的命名
+      var x = 100;
+      // document.write(typeof x);
+
+      //JavaScript数据类型
+      var hello = "hello world"; //string
+      var age = 21; //number
+      var live = true; //boolen(true/false)
+      var girlfriend = null; //空
+      var favsong = undefined; //未定义
+      var Car = {
+        //对象（object）
+        name: "奔驰",
+        status: "漏油"
+      };
+
+      //数字
+      var num1 = 34.0;
+      var num2 = 34; //num1和num2完全相等
+
+      var big = 123e5; //12300000
+      var small = 123e-5; //0.00123
+
+      //字符串
+      var carname1 = "Volvo XC60"; //双引号
+      var carname2 = "Volvo XC60"; //单引号
+
+      var answer1 = "It's alright"; //引号内包含引号
+      var answer2 = "He is called 'Loen'";
+      var answer3 = 'He is called "Loen"';
+
+      /*
+            使用单引号括起来的字符串中，如果要包含单引号须使用反斜杠（\）转义处理字符串中的单引号。
+            使用双引号括起来的字符串中，如果要包含双引号须使用反斜杠（\）转义处理字符串中的双引号。
+            */
+      var sayHello1 = 'Hello!"我是一名JavaScript程序员."';
+      var sayHello2 = 'Hello!"我是一名JavaScript程序员."';
+      // document.write(sayHello2);
+
+      /*
+            null 指曾赋过值，但是目前没有值
+            undefined 指从未赋值
+            */
+      var a;
+      typeof a; // "undefined"
+      var b = 42;
+      typeof b; // "number"
+      b = a;
+      typeof b; // "undefined"
+
+      // JavaScript运算符
+
+      //   typeof 运算符
+      typeof undefined === "undefined"; // true
+      typeof true === "boolean"; // true
+      typeof 42 === "number"; // true
+      typeof "42" === "string"; // true
+      typeof { lift: 42 } === "object"; // true
+      // ES6中新加入的Symbol类型
+      typeof Symbol() === "symbol"; // true
+
+      function golfScore(par, strokes) {
+        // 请只修改这条注释以下的代码
+        if (strokes == 1) {
+          return "Hole-in-one!";
+        } else if (strokes == par - 1) {
+          return "Birdie";
+        } else if (strokes == par) {
+          return "Par";
+        } else if (strokes == par + 1) {
+          return "Bogey";
+        } else if (strokes == par + 2) {
+          return "Double Bogey";
+        } else if (strokes >= par + 3) {
+          return "Go Home!";
+        } else {
+          return "修改这里";
+        }
+      }
+      // 你可以修改这一行来测试你的代码
+      golfScore(5, 4);
+
+      //JavaScript 字符串
+      var coursename = "JavaScript 微课";
+      var character = coursename[5];
+      //   document.write(character);
+
+      //字符串运算符
+      var myName = " Loen ";
+      var myString1 = "我在学习";
+      var myString2 = "JavaScript编程语言";
+      var len1 = myString1.length;
+      var len2 = myString2.length;
+      //   document.write(myString1 + myString2);
+      //   document.write(len1);
+      //   document.write(myString1 + myName + myString2);
+
+      var myStr = "Bob";
+      myStr[0] = "J"; // myStr 依然是 Bob
+      myStr = "Job"; // myStr 值为 Job
+    </script>
+  </body>
+</html>

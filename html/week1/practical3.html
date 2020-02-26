@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript语句</title>
+    <script></script>
+  </head>
+  <body>
+    <script>
+      //if、if-else语句
+      var num = 30;
+      if (num < 20) {
+        // document.write("在线学习JavaScript很简单");
+      } else {
+        // document.write("num值不正确");
+      }
+
+      //if-else嵌套
+      var course = 1;
+      if (course == 1) {
+        // document.write("<h1>HTML 教程</h1>");
+      } else if (course == 2) {
+        // document.write("<h1>CSS 教程</h1>");
+      } else {
+        // document.write("<h1>JavaScript 教程</h1>");
+      }
+
+      //switch语句
+      function myFunction() {
+        var x;
+        var d = new Date().getDay(); // 获取周几的方法
+        switch (d) {
+          case 0:
+            x = "今天是星期日";
+            break;
+          case 1:
+            x = "今天是星期一";
+            break;
+          case 2:
+            x = "今天是星期二";
+            break;
+          case 3:
+            x = "今天是星期三";
+            break;
+          case 4:
+            x = "今天是星期四";
+            break;
+          case 5:
+            x = "今天是星期五";
+            break;
+          case 6:
+            x = "今天是星期六";
+            break;
+        }
+        return x;
+      }
+      //   alert(myFunction()); // 使用 alert 显示函数的返回值
+
+      //for循环
+      var cars = ["大众", "奔驰", "本田", "丰田", "特斯拉", "路虎", "福特"];
+      for (var i = 0; i < cars.length; i++) {
+        // document.write(cars[i] + "<br>");
+      }
+
+      var i = 0;
+      for (; i < 5; ) {
+        // document.write(i);
+        i++;
+      }
+      //把从1到9的奇数添加到 myArray
+      var myArray = [];
+      for (var i = 1; i < 10; i += 2) {
+        myArray.push(i);
+      }
+      //   document.write(myArray);
+
+      //while
+
+      //do while
+      var x = "",
+        i = 0;
+      do {
+        x = x + "The number is " + i + "<br>";
+        i++;
+      } while (i < 5);
+      //   document.write(x);   //在do ... while循环结束时使用的分号。
+
+      //break
+      var x = "";
+      for (i = 0; i < 10; i++) {
+        if (i == 3) {
+          break;
+        }
+        x = x + "The number is " + i + "<br>";
+      }
+      //   document.write(x);
+
+      //continue
+      var x = "";
+      for (i = 0; i <= 10; i++) {
+        if (i == 3) {
+          continue;  //continue语句用来中断循环中的迭代，如果出现了指定的条件，然后继续循环中的下一个迭代。
+
+        }
+        x = "数值是： " + i + "<br>";
+        // document.write(x);
+      }
+    </script>
+  </body>
+</html>

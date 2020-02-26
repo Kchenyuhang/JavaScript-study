@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript中的对象</title>
+    <script></script>
+  </head>
+  <body>
+    <script>
+      /*
+        对象属性——了两种方式访问 person 的年龄
+        objectName.propertyName
+        或者
+        objectName['propertyName']
+        */
+      var person = {
+        name: "John",
+        id: 1,
+        age: 31,
+        favColor: "green",
+        height: 183,
+        //当创建了一个对象后，可以用 . 或 [] 来更新对象的属性。
+        weight: ["140"]
+      };
+      var x = person.age;
+      var y = person["age"];
+      //内置长度属性用于计算属性或字符串中的字符数
+      //   console.log(person.name.length);
+      //更改它的名称为 'Happy Camper'，有两种方式来更新对象的name属性
+      person.name = "Archer";
+      //   person['name'] = 'Caster';
+      //也可以像更改属性一样给对象添加属性
+      person.hobby = "football"; //等价于 preson['hobby'] = 'football';
+      //同样可以删除对象的属性
+      var c1 = person["id"]; //c1 等于 1
+      //删除 id 属性
+      delete person["id"]; // 等价于 delete person.id
+      var c2 = person["id"]; // c2 等于 undefined
+      //   console.log(person);
+
+      //对象方法
+      var a = "age";
+      var myObj = {
+        name: "Loen",
+        age: "28",
+        eat: function() {
+          return "I'm eating";
+        }
+      };
+      var message = "Hello world";
+      //使用了String 对象的 toUpperCase() 方法来将文本转换为大写
+      var x = message.toUpperCase();
+      //   document.write(x);
+      //   使用 [] 读取对象属性
+      //   console.log(myObj["name"]); // Loen
+      //   console.log(myObj[a]); // 可以用变量访问对象属性, 这里返回 28
+      //   console.log(myObj["eat"]()); // 返回 I'm eating
+
+      //对象构造器
+      //JavaScript使用函数来构造对象
+      function human(firstname, lastname, age, eyecolor) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+        this.eyecolor = eyecolor;
+      }
+      /*
+      在JavaScript中，this通常指向的是我们正在执行的函数本身，
+      或者是指向该函数所属的对象（运行时）
+      一旦有了对象构造器，就可以创建新的对象实例，就像这样：
+      */
+      var myFather = new human("John", "Doe", 50, "blue");
+      var myMother = new human("Sally", "Rally", 48, "green");
+      //   console.log(myFather.age); // -> 50
+      //   console.log(myMother.firstname); // -> Sally
+
+      //对象初始化
+      //使用英文大括号 {} 创建单个对象
+      var John = { name: "John", age: 25 };
+      var Loen = { name: "Loen", age: 28 };
+      //使用对象初始化器的时候，空格和换行符并不重要。对象定义可以跨多行。
+      var John = {
+        name: "John",
+        age: 25
+      };
+      var Loen = {
+        name: "Loen",
+        age: 28
+      };
+      //   console.log(John)
+      //   console.log(Loen)
+
+      //添加方法
+      /*
+      可以使用以下方式创建对象函数:
+      methodName : function() { code lines }
+      使用以下方式访问对象函数:
+      objectName.methodName()
+      */
+
+      /*
+      this 关键词是当前对象的引用，可以使用 this 来访问对象属性和方法。
+      在构造函数中定义方法
+      */
+      function student(name, age) {
+        this.name = name;
+        this.age = age;
+        this.changeName = function(name) {
+          this.name = name;
+        };
+      }
+      var p = new student("Loen", 28);
+      p.changeName("John");
+      //也可以在构造函数外部定义一个函数，通过函数名关联到对象的属性上:
+      function friend(name, age) {
+        this.name = name;
+        this.age = age;
+        this.yearOfBirth = bornYear; // 关联 bornYear 函数
+      }
+      function bornYear() {
+        return new Date().getFullYear() - this.age;
+      }
+    </script>
+  </body>
+</html>
