@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript正则表达式</title>
+    <script></script>
+  </head>
+  <body>
+    <!-- 使用字符串方法 -->
+    <script>
+      //   使用正则表达式搜索 "w3cschool" 字符串，且不区分大小写：
+      var str1 = "Visit w3cschool";
+      var n = str1.search(/w3cschool/i);
+      console.log(n);
+
+      /*
+      replace() 方法使用正则表达式
+      使用正则表达式且不区分大小写将字符串中的 Microsoft 替换为 w3cschool :
+      */
+      var str2 = "Visit Microsoft!";
+      var res1 = str2.replace(/microsoft/i, "w3cschool");
+      var res2 = str2.replace("Microsoft", "w3cschool");
+      console.log(res1)
+      console.log(res2)
+    </script>
+  </body>
+</html>

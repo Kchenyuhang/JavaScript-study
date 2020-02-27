@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript（DOM）</title>
+    <script></script>
+    <style>
+      #container {
+        width: 600px;
+        height: 400px;
+        background: rgb(170, 199, 170);
+        position: relative;
+      }
+      #box {
+        width: 60px;
+        height: 60px;
+        background: rgb(211, 144, 144);
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="box"></div>
+    </div>
+
+    <!-- 动画 -->
+    <script>
+      /*
+      使用动画，将红色框移动到容器的右侧。
+      当箱子的 left 属性到值600时，盒子到达容器的末端，
+      容器宽度为600px，盒子宽为60px
+      */
+      //定义开始的位置
+      var pos = 0;
+      // 获取盒子元素
+      var box = document.getElementById("box");
+      //创建一个每10毫秒调用一个move()函数的计时器
+      var t = setInterval(move, 10);
+      //定义move()函数，改变框的位置
+      function move() {
+        if (pos >= 540) {
+          clearInterval(t);
+        } else {
+          pos += 1;
+          box.style.left = pos + "px"; //px = pixels
+        }
+      }
+    </script>
+
+    <div id="demo"></div>
+    <div class="demo">
+      <span class="demo">Hi I'm Loen!</span>
+    </div>
+    <!-- <a class="demo">This is a paragraph</a> -->
+    <p>hi</p>
+    <p>hello</p>
+    <p>hi</p>
+
+    <!-- HTML DOM -->
+    <script>
+      /*
+      通过 id 找元素
+      document.getElementById(id)
+      通过 类 找元素
+      document.getElementsByClassName(name)
+      通过 标签 找元素
+      document.getElementsByTagName(name)
+      */
+      //getElementById 方法用于选择 id="demo" 的元素并更改其内容
+      var elem = document.getElementById("demo");
+      elem.innerHTML = "Hello World";
+      //getElementsByClassName() 方法通过类名查找所有元素，并将其作为数组返回
+      var arr = document.getElementsByClassName("demo");
+      //访问第二个元素
+      arr[1].innerHTML = "Hi I am Peter";
+      //getElementsByTagName 方法返回指定标签名称的所有元素,作为数组返回
+      var arr = document.getElementsByTagName("p");
+      for (var x = 0; x < arr.length; x++) {
+        arr[x].innerHTML = "Hi there";
+      }
+    </script>
+
+    <div id="dom">
+      <p>一些文本</p>
+      <p>另一些文本</p>
+    </div>
+
+    <!-- 使用DOM -->
+    <script>
+      /*
+      可以选择元素的所有子节点并更改其内容
+      */
+      var a = document.getElementById("dom");
+      var arr = a.childNodes;
+      for (var x = 0; x < arr.length; x++) {
+        arr[x].innerHTML = "新的文本";
+      }
+    </script>
+
+    <a href="http://www.baidu.com">百度</a>
+    <img id="my-img" src="/img/P1.jpg" alt="" />
+
+    <!-- 改变属性 -->
+    <script>
+      /*
+      选择要使用的元素后，可以更改其属性。
+      */
+      //更改图像的 src 属性
+      var el = document.getElementById("my-img"); // 通过id="my-img"获取元素
+      el.src = "/img/P2.jpg";
+      //更改链接的href属性
+      var el = document.getElementsByTagName("a");
+      el[0].href = "https://www.google.cn";
+      el[0].innerHTML = "google";
+    </script>
+
+    <div id="do" style="width:200px">一些文本</div>
+    <!-- 改变样式 -->
+    <script>
+      //改变了div元素的文本颜色和宽度
+      var x = document.getElementById("do");
+      x.style.color = "#f44519";
+      x.style.width = "50px";
+    </script>
+
+    <div id="node">一些文本</div>
+    <div id="delete">
+      <p id="p1">这是一个段落.</p>
+      <p id="p2">这是另外一个段落.</p>
+    </div>
+    <!-- 添加和移除元素 -->
+    <script>
+      /*
+        使用以下方法创建新节点：
+        element.cloneNode() 克隆元素并返回结果节点。
+        document.createElement(element) 创建一个新的元素节点。
+        document.createTextNode(text) 创建一个新的文本节点
+        */
+      //创建一个新的段落
+      var p = document.createElement("p");
+      var node = document.createTextNode("一些新的文本");
+      //添加文本到段落
+      p.appendChild(node);
+      var div = document.getElementById("node");
+      //将段落添加到div中
+      div.appendChild(p);
+
+      //移除元素
+      var parent = document.getElementById("delete");
+      var child = document.getElementById("p1");
+      //   会从页面中删除 id ="p1" 的段落。
+      parent.removeChild(child); // 另一种方法 child.parentNode.removeChild(child);
+    </script>
+
+    <div id="replace">
+      <p id="p3">Archer</p>
+      <p id="p4">Caster</p>
+    </div>
+    <!-- 替换元素 -->
+    <script>
+      //要替换HTML元素，使用 element.replaceChild(newNode,oldNode) 方法。
+      //   创建一个替换现有 p3 段落的新段落元素。
+      var p = document.createElement("p");
+      var node = document.createTextNode("Saber");
+      p.appendChild(node);
+      var parent = document.getElementById("replace");
+      var child = document.getElementById("p3");
+      parent.replaceChild(p, child);
+    </script>
+  </body>
+</html>

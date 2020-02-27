@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript事件</title>
+    <script></script>
+  </head>
+  <!-- 当用户进入或离开页面时，触发 onload 和 onunload 事件。在页面加载后执行操作时，这些操作非常有用。 -->
+  <body onload="doSomething()">
+    <!-- 类似地，window.onload 事件可以用于在整个页面加载之后运行代码。 -->
+    <script>
+      window.onload = function() {
+        alert("整个页面已经加载完成");
+      };
+    </script>
+
+    <!-- 事件流 -->
+    <p id="tip1">这边显示提示</p>
+    <h2 id="tip2">这边显示提示</h2>
+    <hr />
+    <p onclick="clickfn()">点击我看看</p>
+    <br />
+    <input type="text" onfocus="focusfn()" onblur="blurfn()" value="获得焦点" />
+    <br />
+    <br />
+    <div onmouseover="moverfn()" onmouseout="moutfn()">
+      鼠标移动进来看看
+    </div>
+    <br />
+
+    <!-- 处理事件 -->
+    <button onclick="show()">点击我</button>
+    <br />
+    <br />
+    <div id="demo">
+      <div id="date">date</div>
+    </div>
+    <br />
+    <input type="text" id="name" onchange="change()" />
+    <br />
+    <script>
+      //当用户单击指定的按钮时，我们将显示一个提醒弹出窗口
+      function show() {
+        alert("你好,我在这里!");
+      }
+      //可以给元素绑定事件监听
+      var x = document.getElementById("demo");
+      x.onclick = function() {
+        document.getElementById("date").innerHTML = new Date();
+      };
+      //onchange 事件主要用于文本框当文本框内的文本发生变化并且焦点从元素中丢失时，调用事件处理程序
+      function change() {
+        var x = document.getElementById("name");
+        x.value = x.value.toUpperCase(); // 转成大写
+      }
+    </script>
+
+    <!-- 事件监听 -->
+    <br />
+    <input id="btn" type="button" value="点我" />
+    <br />
+    <script>
+      /*
+        addEventListener() 方法将事件处理程序附加到元素，而不会覆盖现有的事件处理程序
+        element.addEventListener(event, function [, useCapture]);
+        */
+      var element = document.getElementById("btn");
+      element.addEventListener("click", myFunction);
+      //element.addEventListener("mouseover", myFunction);
+      function myFunction() {
+        alert("Hello JavaScript！");
+      }
+    </script>
+
+    <!-- 删除事件监听 -->
+    <br />
+    <button id="btn1">开始</button>
+    <hr />
+    <script>
+      /*
+      可以使用 removeEventListener 删除事件监听：
+      element.removeEventListener("mouseover", myFunction);
+      */
+      var btn = document.getElementById("btn1");
+      btn.addEventListener("click", myFunction);
+      function myFunction() {
+        alert(Math.random());
+        //创建一个事件处理程序，在执行后会自动删除
+        btn.removeEventListener("click", myFunction);
+      }
+    </script>
+
+    <!-- 幻灯片案例 -->
+    <!-- 创建一个示例图像幻灯片项目，使用“下一张”和“上一张”按钮更改图像。
+        先创建HTML，其中包括一个图像和两个导航按钮： -->
+    <div>
+      <!-- 现在我们需要处理 "上一个" 和 "下一个" 按钮点击并调用相应的功能来更改图像。 -->
+      <button onclick="prev()">上一张</button>
+      <img
+        id="slider"
+        src="https://kxingchen.oss-cn-shanghai.aliyuncs.com/%E6%98%9F%E5%BA%A7/1.jpg"
+      />
+      <button onclick="next()">下一张</button>
+    </div>
+    <script>
+      //接下来，让我们在数组中定义我们的示例图像：
+      //完整的JS
+      var images = [
+        "https://kxingchen.oss-cn-shanghai.aliyuncs.com/%E6%98%9F%E5%BA%A7/10.jpg",
+        "https://kxingchen.oss-cn-shanghai.aliyuncs.com/%E6%98%9F%E5%BA%A7/11.jpg",
+        "https://kxingchen.oss-cn-shanghai.aliyuncs.com/%E6%98%9F%E5%BA%A7/12.jpg",
+        "https://kxingchen.oss-cn-shanghai.aliyuncs.com/%E6%98%9F%E5%BA%A7/2.jpg",
+        "https://kxingchen.oss-cn-shanghai.aliyuncs.com/%E6%98%9F%E5%BA%A7/3.jpg"
+      ];
+      var num = 0;
+      function next() {
+        var slider = document.getElementById("slider");
+        num++;
+        if (num >= images.length) {
+          num = 0;
+        }
+        slider.src = images[num];
+      }
+      function prev() {
+        var slider = document.getElementById("slider");
+        num--;
+        if (num < 0) {
+          num = images.length - 1;
+        }
+        slider.src = images[num];
+      }
+    </script>
+
+    <!-- 表单验证 -->
+    <!-- 创建一个带有两个输入框和一个按钮的窗体。两个字段中的文本应该相同，不能为空，才可通过验证。 -->
+    <form onsubmit="return validate()" method="post">
+      Number: <input type="text" name="num1" id="num1" />
+      <br />
+      Repeat: <input type="text" name="num2" id="num2" />
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+    <!-- 现在我们需要定义 validate() 函数 -->
+    <script>
+      function validate() {
+        var n1 = document.getElementById("num1");
+        var n2 = document.getElementById("num2");
+        if (n1.value != "" && n2.value != "") {
+          if (n1.value == n2.value) {
+            alert("正确!")
+            return true;
+          }
+        }
+        alert("输入两个值不相等,请重新输入!");
+        return false;
+      }
+    </script>
+  </body>
+</html>
