@@ -6,6 +6,7 @@
     <script></script>
   </head>
   <body>
+    <div id="demo">Hello</div>
     <script>
       //string对象
       /*
@@ -97,10 +98,10 @@
           键/值对包括字段名称（在双引号中），后面一个冒号，然后是值
           "name":"JavaScript"
           */
-          //JSON对象
-          ({ name: "baidu", url: "www.baidu.com" },
+          //JSON数组
+          { name: "baidu", url: "www.baidu.com" }, //JSON对象
           { name: "Google", url: "www.google.com" },
-          { name: "Taobao", url: "www.taobao.com" })
+          { name: "Taobao", url: "www.taobao.com" }
         ];
       }
 
@@ -202,7 +203,7 @@
         var secs = d.getSeconds();
         document.body.innerHTML = hours + ":" + mins + ":" + secs;
       }
-      setInterval(printTime, 1000); // setInterval 第二个参数单位是 毫秒
+      // setInterval(printTime, 1000); // setInterval 第二个参数单位是 毫秒
     </script>
   </body>
 </html>
