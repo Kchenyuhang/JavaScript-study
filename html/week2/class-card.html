@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <!-- <meta name="referrer" content="no-referrer"> -->
+    <title>班级资料卡</title>
+  </head>
+  <body onload="showData()">
+    <div id="demo"></div>
+    <script>
+      var student = [
+        {
+          序号: "1",
+          姓名: "王锋",
+          昵称: "小王",
+          籍贯: "江苏徐州",
+          生日: "1999.02.23",
+          星座: "双鱼",
+          电话: "14752191369",
+          QQ: "1244353765",
+          邮箱: "1244353765@qq.com",
+          头像:
+            "http://ww1.sinaimg.cn/large/0084EtCNgy1gcd67rpn01j30hs0hsgmi.jpg",
+          github主页: "https://github.com/wangfeng351",
+          爱好: "编程，听歌，吃，运动",
+          个签: "不能输给自己！！！",
+          色彩: "#76f0ed"
+        },
+        {
+          序号: "2",
+          姓名: "颜子皓",
+          昵称: "小颜",
+          籍贯: "江苏无锡",
+          生日: "2000.03.06",
+          星座: "双鱼",
+          电话: "19825088733",
+          QQ: "3149991705",
+          邮箱: "3149991705@qq.com",
+          头像:
+            "http://ww1.sinaimg.cn/large/007YO3iLgy1gcd72p3hmxj30i60c90tr.jpg",
+          github主页: "https://github.com/yzh888",
+          爱好: "音乐，电影，捉蜂王",
+          个签: "要想生活过得去",
+          色彩: "#ff0000"
+        },
+        {
+          序号: "3",
+          姓名: "刘恋",
+          昵称: "花无泪",
+          籍贯: "贵州毕节",
+          生日: "1996.09.15",
+          星座: "天秤",
+          电话: "19850099791",
+          QQ: "2313673906",
+          邮箱: "2313673906@qq.com",
+          头像:
+            "https://student-manage-ll.oss-cn-beijing.aliyuncs.com/img/timg.jpg",
+          github主页: "https://github.com/ll2313673906",
+          爱好: "吃饭，看电影",
+          个签: "就喜欢你看不惯我，又灭不掉我的样子",
+          色彩: "#003A44"
+        },
+        {
+          序号: "4",
+          姓名: "席光平",
+          昵称: "糖醋排骨",
+          籍贯: "安徽阜阳",
+          生日: "1999.08.18",
+          星座: "处女",
+          电话: "18851137516",
+          QQ: "2816540069",
+          邮箱: "2816540069@qq.com",
+          头像:
+            "http://img3.imgtn.bdimg.com/it/u=3056013207,2198365330&fm=11&gp=0.jpg",
+          github主页: "https://github.com/CodeJasmine",
+          爱好: "吃，喝，rush B",
+          个签: "没有理所当然的成功，也没有毫无道理的平庸",
+          色彩: "#EEE9E9"
+        },
+        {
+          序号: "5",
+          姓名: "曹暝桕",
+          昵称: "asdfghjkl",
+          籍贯: "江苏无锡",
+          生日: "2000.03.09",
+          星座: "双鱼",
+          电话: "15152231582",
+          QQ: "2731964526",
+          邮箱: "15152231582@163.com",
+          头像:
+            "https://student-manage-ll.oss-cn-beijing.aliyuncs.com/img/timg.jpg",
+          github主页: "https://github.com/caomingjiu",
+          爱好: "打游戏",
+          个签: "没有理所当然的成功，也没有毫无道理的平庸",
+          色彩: "#EEE9E9"
+        },
+        {
+          序号: "6",
+          姓名: "陶永新",
+          昵称: "Tao.",
+          籍贯: "江苏扬州",
+          生日: "2000.01.01",
+          星座: "摩羯",
+          电话: "17826012341",
+          QQ: "1427177855",
+          邮箱: "tyxu1427177855@126.com",
+          头像: "https://avatars0.githubusercontent.com/u/55398415?s=460&v=4",
+          github主页: "https://github.com/taoyongxin",
+          爱好: "篮球、追剧",
+          个签: "Kepp Calm and Carry On（保持冷静，继续前行）",
+          色彩: "#bdbebd"
+        },
+        {
+          序号: "7",
+          姓名: "侯粤嘉",
+          昵称: "无梦相赠",
+          籍贯: "湖南郴州",
+          生日: "2000.09.01",
+          星座: "处女",
+          电话: "18851853957",
+          QQ: "2298090131",
+          邮箱: "2298090131@qq.com",
+          头像:
+            "https://avatar-cdn.shimo.im/IZuPjlOpBRUTU7oZ/bluetian.jpg__avatar",
+          github主页: "https://github.com/hyj200091",
+          爱好: "篮球",
+          个签: "虚度年华",
+          色彩: "#ffe699"
+        },
+        {
+          序号: "8",
+          姓名: "曾传志",
+          昵称: "夢想，理應飛翔",
+          籍贯: "江西赣州",
+          生日: "1999.10.18",
+          星座: "天秤",
+          电话: "18851697603",
+          QQ: "599984243",
+          邮箱: "599984243@qq.com",
+          头像:
+            "https://ae01.alicdn.com/kf/U84c4005a0b274d39901e3b7ca2b37f52p.png",
+          github主页: "https://github.com/czzeng-code",
+          爱好: "羽毛球，音乐, 电影",
+          个签: "年轻就要醒着拼",
+          色彩: "#87CEFA"
+        },
+        {
+          序号: "9",
+          姓名: "管江宇",
+          昵称: "Faith",
+          籍贯: "江苏南京",
+          生日: "2000.06.19",
+          星座: "双子",
+          电话: "18851862391",
+          QQ: "2501015371",
+          邮箱: "gjy0619@126.com",
+          头像:
+            "https://qlogo4.store.qq.com/qzone/2501015371/2501015371/100?1556427576",
+          github主页: "https://github.com/2501015371",
+          爱好: "篮球，健身，游戏",
+          个签: "青春在于拼搏",
+          色彩: "#ff0000"
+        },
+        {
+          序号: "10",
+          姓名: "韩源",
+          昵称: "玛卡巴卡",
+          籍贯: "山西忻州",
+          生日: "2000.02.06",
+          星座: "水瓶",
+          电话: "18851860919",
+          QQ: "2641013950",
+          邮箱: "2641013950@qq.com",
+          头像: "https://avatars1.githubusercontent.com/u/51700682?s=60&v=4",
+          github主页: "https://github.com/Macabaka",
+          爱好: "吃饭、睡觉、打豆豆",
+          个签: "丰碑无语，行胜于言",
+          色彩: "#eeeeee"
+        },
+        {
+          序号: "11",
+          姓名: "孙文龙",
+          昵称: "Kuzma",
+          籍贯: "江苏淮安",
+          生日: "2000.07.09",
+          星座: "巨蟹",
+          电话: "18805167526",
+          QQ: "2673327266",
+          邮箱: "2673327266@qq.com",
+          头像: "https://avatars1.githubusercontent.com/u/55436087?s=60&v=4",
+          github主页: "https://github.com/Kuzma77",
+          爱好: "篮球，音乐，摄影，电影",
+          个签: "路还很长，天总会亮。",
+          色彩: "#CAFF70"
+        },
+        {
+          序号: "12",
+          姓名: "赵玉杰",
+          昵称: "Libra",
+          籍贯: "江苏南京",
+          生日: "2000.02.28",
+          星座: "天秤",
+          电话: "18852017973",
+          QQ: "1836686674",
+          邮箱: "1836686674@qq.com",
+          头像: "https://avatars0.githubusercontent.com/u/55378225?s=460&v=4",
+          github主页: "https://github.com/LibraZYJ",
+          爱好: "吃饭、睡觉、打豆豆",
+          个签: "我就站在你面前，你看我几分像从前！",
+          色彩: "#757575"
+        },
+        {
+          序号: "13",
+          姓名: "谢晓茜",
+          昵称: "原味冰淇淋",
+          籍贯: "重庆",
+          生日: "1999.04.30",
+          星座: "金牛",
+          电话: "17783208600",
+          QQ: "2320832818",
+          邮箱: "2320832818@qq.com",
+          头像: "https://avatars1.githubusercontent.com/u/55443431?s=460&v=4",
+          github主页: "https://github.com/xiexiaoqian",
+          爱好: "乒乓球，电影，户外运动",
+          个签: "Beasty",
+          色彩: "#90F7EC"
+        },
+        {
+          序号: "14",
+          姓名: "杨晶",
+          昵称: "毛毛",
+          籍贯: "江苏盐城",
+          生日: "1997.12.29",
+          星座: "摩羯",
+          电话: "18452555712",
+          QQ: "846272692",
+          邮箱: "846272692@qq.com",
+          头像: "https://avatars3.githubusercontent.com/u/45115317?s=460&v=4",
+          github主页: "https://github.com/yj846272692",
+          爱好: "骑行、音乐、书法",
+          个签: "一蓑烟雨任平生",
+          色彩: "\t#B0C4DE"
+        },
+        {
+          序号: "15",
+          姓名: "杨阳",
+          昵称: "杨阳",
+          籍贯: "江苏南通",
+          生日: "2000.04.28",
+          星座: "金牛",
+          电话: "17625835438",
+          QQ: "1294898797",
+          邮箱: "1294898797@qq.com",
+          头像: "https://s2.ax1x.com/2020/02/29/3sH5vT.jpg",
+          github主页: "https://github.com/RuErJieFei",
+          爱好: "看电视、看别人的电视",
+          个签: "别太一样",
+          色彩: "#bc3639"
+        },
+        {
+          序号: "16",
+          姓名: "王林",
+          昵称: "林林",
+          籍贯: "四川自贡",
+          生日: "1999.01.21",
+          星座: "水瓶",
+          电话: "18094247962",
+          QQ: "1987153442",
+          邮箱: "1987153442@qq.com",
+          头像: "https://p1.pstatp.com/large/pgc-image/1539249812874260d011c57",
+          github主页: "https://github.com/wanglin1987153442",
+          爱好: "运动，听歌",
+          个签: "就这？就这？就这？就这！",
+          色彩: "#bc3639"
+        },
+        {
+          序号: "17",
+          姓名: "苏玉溪",
+          昵称: "苏先森",
+          籍贯: "广西玉林",
+          生日: "1999.04.12",
+          星座: "白羊座",
+          电话: "13457513856",
+          QQ: "2296887348",
+          邮箱: "2296887348@qq.com",
+          头像: "https://avatars0.githubusercontent.com/u/55439911?s=400&v=4",
+          github主页: "https://github.com/suyuxi1",
+          爱好: "听歌，看电影",
+          个签: "生活总得风雨交加",
+          色彩: "#EEE9E9"
+        },
+        {
+          序号: "18",
+          姓名: "赵肖龙",
+          昵称: "撒野",
+          籍贯: "江苏无锡",
+          生日: "2000.4.20",
+          星座: "金牛",
+          电话: "18851860805",
+          QQ: "1019916061",
+          邮箱: "1019916061@qq.com",
+          头像:
+            "https://kkkksslls.oss-cn-beijing.aliyuncs.com/avatar/f809ee03-cc77-4831-bf6e-a51ba4d1717d.png",
+          github主页: "https://github.com/zhao-rgb",
+          爱好: "打球",
+          个签: "撒野啊",
+          色彩: "#90F7EC"
+        },
+        {
+          序号: "19",
+          姓名: "袁腾飞",
+          昵称: "Rapids",
+          籍贯: "安徽阜阳",
+          生日: "1998.07.30",
+          星座: "狮子座",
+          电话: "18851856989",
+          QQ: "798763046",
+          邮箱: "798763046@qq.com",
+          头像: "https://avatars0.githubusercontent.com/u/44634313?s=460&v=4",
+          github主页: "https://github.com/RRapids",
+          爱好: "打球",
+          个签: "若青春只顾疯狂，卑微就越来越近",
+          色彩: "#D8E3F3"
+        },
+        {
+          序号: "20",
+          姓名: "张浩杰",
+          昵称: "寻寻觅",
+          籍贯: "山西晋城",
+          生日: "1999.05.11",
+          星座: "巨蟹座",
+          电话: "18851999738",
+          QQ: "1224178565",
+          邮箱: "1224178565@qq.com",
+          头像: "https://github.com/account",
+          github主页: "https://github.com/GitHub-fly",
+          爱好: "什么也不懂，什么都不会",
+          个签: "寻寻觅觅，冷冷清清",
+          色彩: "\t#AFEEEE"
+        },
+        {
+          序号: "21",
+          姓名: "尚宇驰",
+          昵称: "盏茶浅抿",
+          籍贯: "江苏徐州",
+          生日: "2000.04.02",
+          星座: "白羊座",
+          电话: "18094246920",
+          QQ: "351234359",
+          邮箱: "351234359@qq.com",
+          头像:
+            "https://avatars3.githubusercontent.com/u/55419799?s=400&u=06400cc24a3dd8b97880a631daad51e37a6792d8&v=4",
+          github主页: "https://github.com/ycshang123",
+          爱好: "追剧、编程、电影、音乐",
+          个签: "少年抬头，仰望明天。仰望，就有希望。",
+          色彩: "\t#AFEEEE"
+        },
+        {
+          序号: "22",
+          姓名: "许源",
+          昵称: "Away",
+          籍贯: "重庆酉阳",
+          生日: "2000.2.15",
+          星座: "水瓶座",
+          电话: "15025762624",
+          QQ: "2414704205",
+          邮箱: "2414704205@qq.com",
+          头像:
+            "https://lh3.googleusercontent.com/proxy/0Cr5yHQIaOG51i1Vbp9iw3iRcRF-KN0bex1oSXdGTbCc9tITgfpjo25SJZ9HV9qIywnmOeCm-jG-gKBHeKF9nL8eoTBX3Pub76BvQqeenl5t1VCGLus",
+          github主页: "https://github.com/xuyuan-215",
+          爱好: "音乐， 篮球",
+          个签: "热爱漫无边际，生活自有分寸",
+          色彩: "#D8E3F3"
+        },
+        {
+          序号: "23",
+          姓名: "黄敬理",
+          昵称: "小黄",
+          籍贯: "广西灵山",
+          生日: "1999.01.01",
+          星座: "天秤座",
+          电话: "18278743357",
+          QQ: "2368046759",
+          邮箱: "2368046759@qq.com",
+          头像: "https://aadsadas.oss-cn-beijing.aliyuncs.com/img/avatar.jpg",
+          github主页: "https://github.com/huangjingliANBAO",
+          爱好: "看足球 小视频",
+          个签: "有事情做真好",
+          色彩: "#33993B"
+        },
+        {
+          序号: "24",
+          姓名: "唐小梁",
+          昵称: "XL码的唐",
+          籍贯: "广西贵港",
+          生日: "1998.07.16",
+          星座: "巨蟹座",
+          电话: "18805167507",
+          QQ: "1255965856",
+          邮箱: "1255965856@qq.com",
+          头像: "http://dwz.date/BbR",
+          github主页: "https://github.com/",
+          爱好: "一切的不务正业都是我的爱好",
+          个签: "真常应物，真常得性；常应常静，常清静矣",
+          色彩: "#ffca28"
+        },
+        {
+          序号: "25",
+          姓名: "倪涛涛",
+          昵称: "事在人为",
+          籍贯: "江苏徐州",
+          生日: "1999.05.27",
+          星座: "双子座",
+          电话: "18851855106",
+          QQ: "1914866205",
+          邮箱: "1914866205@qq.com",
+          头像: "https://avatars0.githubusercontent.com/u/58495771?s=460&v=4",
+          github主页: "https://github.com/1914866205",
+          爱好: "学习，跑步，聊天",
+          个签: "事在人为",
+          色彩: "#dcdcdc"
+        },
+        {
+          序号: "26",
+          姓名: "黄启佳",
+          昵称: "小半吻",
+          籍贯: "广西桂林",
+          生日: "19991117",
+          星座: "天枰座",
+          电话: "19850099797",
+          QQ: "1559022933",
+          邮箱: "1559022933@qq.com",
+          头像:
+            "http://a1.qpic.cn/psc?/V14UV0uv2eU11o/PBfbIKZtAJlvfOqE04IdJdkm*OHGUOxHOupIWolpLbpoKYA0H4N1t*ptZK2ug5qZtALBR9OHsTEOWFRCRZd4yg!!/c&ek=1&kp=1&pt=0&bo=lAOVAwAAAAARFyE!&tl=1&vuin=1559022933&tm=1582952400&sce=60-2-2&rf=0-0",
+          github主页: "https://github.com/CHINAHUANGQIJIA",
+          爱好: "音乐，美术，鼓乐，球类运动",
+          个签: "公平",
+          色彩: "草绿"
+        },
+        {
+          序号: "27",
+          姓名: "秦健",
+          昵称: "N",
+          籍贯: "江苏苏州",
+          生日: "2000.02.17",
+          星座: "水瓶座",
+          电话: "13739173619",
+          QQ: "1293340422",
+          邮箱: "1293340422@qq.com",
+          头像:
+            "https://pic2.zhimg.com/80/v2-b89c9d9d283288b3060910f1fa258edb_720w.jpg",
+          github主页: "https://github.com/Mrqinforce",
+          爱好: "打球",
+          个签: "专注",
+          色彩: "#D8E3F3"
+        },
+        {
+          序号: "28",
+          姓名: "陈蓉琪",
+          昵称: "mob",
+          籍贯: "湖南衡阳",
+          生日: "2001.2.15",
+          星座: "水瓶座",
+          电话: "18851699003",
+          QQ: "2631315464",
+          邮箱: "2631315464@qq.com",
+          头像:
+            "http://m.qpic.cn/psc?/V12hsrLn2axcNX/7o.xLwnHK.dZGyBaILrm92EZCsH0OVZ*zo26brg.RF1iWSGUi0sM.j3n*KIlOCSLIQfKQm1eGD.YX9mTL0jrMbwLMt5I9bgJkpGDH5cuMSk!/b&bo=vALeAwAAAAARB1M!&rf=viewer_4",
+          github主页: "https://github.com/1802343228",
+          爱好: "动漫 游戏 音乐 jk制服",
+          个签: "走出舒适圈",
+          色彩: "#007abb"
+        },
+        {
+          序号: "29",
+          姓名: "郁杰原",
+          昵称: "枫津栈",
+          籍贯: "江苏盐城",
+          生日: "2000.01.22",
+          星座: "水瓶座",
+          电话: "15370000688",
+          QQ: "2641617428",
+          邮箱: "2641617428@qq.com",
+          头像:
+            "http://pic1.zhimg.com/50/v2-60957c76fd38d48903276445b27ac714_hd.jpg",
+          github主页: "https://github.com/yjyqq123",
+          爱好: "吃喝玩乐",
+          个签: "开心每一天",
+          色彩: "灰色"
+        },
+        {
+          序号: "30",
+          姓名: "田震",
+          昵称: "Crihero_",
+          籍贯: "山西吕梁",
+          生日: "1998.11.06",
+          星座: "天蝎座",
+          电话: "19850099292",
+          QQ: "1299088269",
+          邮箱: "zhent1106@163.com",
+          头像: "https://uploader.shimo.im/f/IZuPjlOpBRUTU7oZ.jpg!avatar",
+          github主页: "https://github.com/zhent1106",
+          爱好: "听歌，阅读，创新",
+          个签: "山川湖泊和我都在看你",
+          色彩: "#4574C1"
+        },
+        {
+          序号: "31",
+          姓名: "王欢乐",
+          昵称: "Sunny",
+          籍贯: "甘肃平凉",
+          生日: "1998.08.07",
+          星座: "处女座",
+          电话: "18805162578",
+          QQ: "1162608075",
+          邮箱: "1162608075@qq.com",
+          头像:
+            "https://upload.jianshu.io/users/upload_avatars/14351850/e3e19f54-57bf-4427-b12a-d7d1d563e20c?imageMogr2/auto-orient/strip|imageView2/1/w/120/h/120",
+          github主页: "https://github.com/WHL1998w",
+          爱好: "阅读，听歌，追剧",
+          个签: "你就是你，不一样的烟火",
+          色彩: "粉色，紫色"
+        },
+        {
+          序号: "32",
+          姓名: "王登科",
+          昵称: "For",
+          籍贯: "山西吕梁",
+          生日: "1997.5.20",
+          星座: "巨蟹座",
+          电话: "18851998839",
+          QQ: "1091886414",
+          邮箱: "1091886414@qq.com",
+          头像:
+            "http://img3.imgtn.bdimg.com/it/u=3543839312,2262585839&fm=26&gp=0.jpg",
+          github主页: "https://github.com/wangDk199",
+          爱好: "打球、编程",
+          个签: "忠",
+          色彩: "\t#AFEEEE"
+        },
+        {
+          序号: "33",
+          姓名: "郑亮",
+          昵称: "郑亮",
+          籍贯: "安徽宿州",
+          生日: "1999.2.8",
+          星座: "水瓶座",
+          电话: "18851697510",
+          QQ: "1945256212",
+          邮箱: "1945256212@qq.com",
+          头像: "https://avatars3.githubusercontent.com/u/55389274?s=460&v=4",
+          github主页: "https://github.com/ZL521990208",
+          爱好: "听歌、电影",
+          个签: "红红火火过大年",
+          色彩: "#87CEEB"
+        },
+        {
+          序号: "34",
+          姓名: "郭瑞昌",
+          昵称: "郭瑞昌",
+          籍贯: "山西临汾",
+          生日: "1999.04.16",
+          星座: "双子座",
+          电话: "18851853897",
+          QQ: "48038411",
+          邮箱: "48038411@qq.com",
+          头像: "https://avatars0.githubusercontent.com/u/44643400?s=460&v=4",
+          github主页: "https://github.com/48038411",
+          爱好: "打篮球，编程",
+          个签: "世界这么大最自己喜欢的事",
+          色彩: "#8db6ed"
+        },
+        {
+          序号: "35",
+          姓名: "杨苏祥",
+          昵称: "杨苏祥",
+          籍贯: "安徽阜阳",
+          生日: "1999.12.21",
+          星座: "射手座",
+          电话: "15178114095",
+          QQ: "3597107837",
+          邮箱: "3597107837@qq.com",
+          头像: "https://avatars3.githubusercontent.com/u/45230662?s=460&v=4",
+          github主页: "https://github.com/suxiangyang1",
+          爱好: "听歌 看足球",
+          个签: "",
+          色彩: "#00B19D"
+        },
+        {
+          序号: "36",
+          姓名: "王庆媛",
+          昵称: "啦",
+          籍贯: "贵州贵阳",
+          生日: "2000.9.7",
+          星座: "处女座",
+          电话: "18851861839",
+          QQ: "1950016253",
+          邮箱: "1950016253@qq.com",
+          头像:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4GOLrJQhyxNivTABKcy6JWfuOjXNFvjtj67BOaGJzPoCXaiyt",
+          github主页: "https://github.com/Wang-qing-yuan",
+          爱好: "电影，听歌",
+          个签: "事在人为",
+          色彩: "rgb(255,174,189)"
+        },
+        {
+          序号: "37",
+          姓名: "吴家浩",
+          昵称: "Re",
+          籍贯: "江苏苏州",
+          生日: "2000.8.16",
+          星座: "狮子座",
+          电话: "18851697931",
+          QQ: "1273163614",
+          邮箱: "1273163614@qq.com",
+          头像:
+            "https://assets.smcdn.cn/static/unmd5/default-avatar-moke.2.png",
+          github主页: "https://github.com/Baby20000816",
+          爱好: "音乐，游戏",
+          个签: "No game no life",
+          色彩: "#DFFFFF"
+        },
+        {
+          序号: "38",
+          姓名: "陈宇航",
+          昵称: "Archer",
+          籍贯: "江苏常州",
+          生日: "1999.12.14",
+          星座: "射手座",
+          电话: "18932386185",
+          QQ: "1797262364",
+          邮箱: "1797262364@qq.com",
+          头像:
+            "https://avatar-cdn.shimo.im/TqsbEAzOKIo6ZiUd/sheshouzuo.jpg__avatar",
+          github主页: "https://github.com/kchenyuhang",
+          爱好: "游戏、音乐、钓鱼、阅读",
+          个签: "No Freedom No Life",
+          色彩: "#dc4e41"
+        },
+        {
+          序号: "39",
+          姓名: "位哲武",
+          昵称: "隨颩洏萣",
+          籍贯: "江苏徐州",
+          生日: "2000.06.06",
+          星座: "双子座",
+          电话: "13013947768",
+          QQ: "2316860587",
+          邮箱: "2316860587@qq.com",
+          头像: "https://avatars2.githubusercontent.com/u/43782207?s=460&v=4",
+          github主页: "https://github.com/weizhewu",
+          爱好: "轻音乐、阅读",
+          个签: "永远不要跟傻瓜吵架，因为别人会分不清到底谁是傻瓜",
+          色彩: "#67CCAA"
+        },
+        {
+          序号: "40",
+          姓名: "岳凡",
+          昵称: "派大星",
+          籍贯: "江苏常州",
+          生日: "2000.03.23",
+          星座: "白羊座",
+          电话: "16651100323",
+          QQ: "1412666584",
+          邮箱: "1412666584@qq.com",
+          头像:
+            "https://public-cdn-oss.mosoteach.cn/avatar/2018/BD/78ad5f1737d80986b420a23fb07d530c.jpg?v=1551849938&x-oss-process=style/s200x200",
+          github主页: "https://github.com/YFuean",
+          爱好: "电影、阅读、追剧、乒乓、手游、桌游",
+          个签: "别逼我打野",
+          色彩: "#c9e7ff"
+        },
+        {
+          序号: "41",
+          姓名: "丁怡凡",
+          昵称: "唯一",
+          籍贯: "山西运城",
+          生日: "2000.10.09",
+          星座: "天蝎座",
+          电话: "18851862081",
+          QQ: "510040515",
+          邮箱: "510040515@qq.com",
+          头像:
+            "http://m.imeitou.com/uploads/allimg/2020022416/xcjlklpqncw-lp.jpeg",
+          github主页: "https://github.com/dyf-yifan",
+          爱好: "阅读、音乐、电影",
+          个签: "甩掉忧伤找回快乐@",
+          色彩: "#FFE4C4"
+        }
+      ];
+      var parent = document.getElementById("demo");
+      var children;
+      var child;
+      function showData() {
+        for (var i = 0; i < student.length; i++) {
+          children = document.createElement("div");
+          children.id = "div";
+          children.className = "card";
+          children.style = "background:" + student[i].色彩;
+
+          child = document.createElement("img");
+          // child.addEventListener("onmouseover",over());
+          // child.addEventListener("onmouseout",out());
+          child.className = "img";
+          // child.style = "width:100px;height:100px;border-radius:50%;";
+          child.src = student[i].头像;
+
+          var a = document.createElement("p");
+          a.innerHTML = "姓名：" + student[i].姓名;
+          var b = document.createElement("p");
+          b.innerHTML = "昵称：" + student[i].昵称;
+          var c = document.createElement("p");
+          c.innerHTML = "籍贯：" + student[i].籍贯;
+          var d = document.createElement("p");
+          d.innerHTML = "生日：" + student[i].生日;
+          var e = document.createElement("p");
+          e.innerHTML = "星座：" + student[i].星座;
+          var f = document.createElement("p");
+          f.innerHTML = "电话：" + student[i].电话;
+          var g = document.createElement("p");
+          g.innerHTML = "邮箱：" + student[i].邮箱;
+          var h = document.createElement("p");
+          h.innerHTML = "爱好：" + student[i].爱好;
+          var j = document.createElement("p");
+          j.innerHTML = "个性签名：" + student[i].个签;
+
+          children.appendChild(child);
+          children.appendChild(a);
+          children.appendChild(b);
+          children.appendChild(c);
+          children.appendChild(d);
+          children.appendChild(e);
+          children.appendChild(f);
+          children.appendChild(g);
+          children.appendChild(h);
+          children.appendChild(j);
+          parent.appendChild(children);
+        }
+      }
+    </script>
+  </body>
+
+  <style>
+    body {
+      background: #e2e1e0;
+      text-align: center;
+    }
+
+    .card {
+      border-radius: 2px;
+      display: inline-block;
+      height: 500px;
+      margin: 1rem;
+      position: relative;
+      width: 300px;
+    }
+
+    .img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+  </style>
+</html>

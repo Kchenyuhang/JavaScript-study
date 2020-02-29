@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+
+  <body>
+    <table id="tab" border="1" ; style="border-collapse: collapse;">
+      <tr id="tr1">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="tr2">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+<script>
+  var tr1 = document.getElementById("tr1");
+  var tr1_td = tr1.getElementsByTagName("td");
+
+  var tr2 = document.getElementById("tr2");
+  var tr2_td = tr2.getElementsByTagName("td");
+
+  var tr1_data = ["姓名", "小明", "小陈", "小李"];
+
+  var tr2_data = ["年龄", 18, 20, 23];
+
+  for (i in tr1_td) {
+    tr1_td[i].innerHTML = tr1_data[i];
+    tr2_td[i].innerHTML = tr2_data[i];
+  }
+</script>

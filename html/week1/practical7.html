@@ -108,14 +108,14 @@
       //JSON.parse() 方法
 
       //实例
-      // var text =
-      //   '{"employees":[' +
-      //   '{"name":"baidu","site":"http://www.baidu.com" },' +
-      //   '{"name":"Google","site":"http://www.Google.com" },' +
-      //   '{"name":"Taobao","site":"http://www.taobao.com" }]}';
-      // obj = JSON.parse(text);
-      // document.getElementById("demo").innerHTML =
-      //   obj.employees[1].name + " " + obj.employees[1].site;
+      var text =
+        '{"employees":[' +
+        '{"name":"baidu","site":"http://www.baidu.com" },' +
+        '{"name":"Google","site":"http://www.Google.com" },' +
+        '{"name":"Taobao","site":"http://www.taobao.com" }]}';
+      obj = JSON.parse(text);
+      document.getElementById("demo").innerHTML =
+        obj.employees[1].name + " " + obj.employees[1].site;
 
       //实例 带 reviver 的案例
       // JSON.parse('{"p": 5, "s": 1.5, "t": -3}', function(k, v) {
@@ -156,11 +156,11 @@
       floor() 方法
       **Math.floor()** 返回小于或等于一个给定数字的最大整数。
       **Math.floor()** 向下取整
-      Math.floor(45.95); // 45
-      Math.floor(45.05); // 45
-      Math.floor(4); // 4
-      Math.floor(-45.05); // -46
-      Math.floor(-45.95); // -46
+      // Math.floor(45.95); // 45
+      // Math.floor(45.05); // 45
+      // Math.floor(4); // 4
+      // Math.floor(-45.05); // -46
+      // Math.floor(-45.95); // -46
       */
 
       /*
