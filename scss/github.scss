@@ -1,0 +1,220 @@
+* {
+    $padding: 0;
+    $margin: 0;
+    $box-sizing: border-box;
+}
+
+body {
+    $background-color: #ffffff;
+}
+
+.top {
+    $width: 100%;
+    $height: 290px;
+    size: $width $height;
+    $margin-bottom: 46px;
+    margin: $margin-bottom;
+    $border-bottom: 1px ;
+    $border-color: #fafbfc;
+    border: $border-bottom solid $border-color;
+    $padding-top: 50px;
+    padding: $padding-top;
+}
+
+.smallFrame {
+    width: 365px;
+    height: 185px;
+    background-color: #fff;
+    position: relative;
+    padding: 20px;
+    border-radius: 5px;
+    top: -250px;
+    left: -150px;
+    display: none;
+}
+
+.smallFrame .small-top {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.smallFrame .small-label {
+    width: 100%;
+    height: 48%;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.smallFrame .small-label .followers,
+.smallFrame .small-label .following,
+.smallFrame .small-label .repos {
+    width: 30%;
+    height: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.smallFrame .small-label .followers,
+.smallFrame .small-label .following {
+    border-right: 1px solid #e9ebed;
+}
+
+.smallFrame .small-location {
+    width: 100%;
+    height: 18%;
+    padding-left: 10px;
+}
+
+.smallFrame .out,
+.smallFrame .in {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+}
+
+.smallFrame .out {
+    border: 8px solid transparent;
+    border-top-color: #fff;
+    bottom: -16px;
+    left: 45%;
+}
+
+.container {
+    width: 65%;
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+.container .header {
+    width: 100%;
+    height: 64px;
+    border-radius: 2px;
+    border-top: 1px solid #d1d5da;
+    border-left: 1px solid #d1d5da;
+    border-right: 1px solid #d1d5da;
+    background-color: #f6f8fa;
+    display: flex;
+}
+
+
+
+.card {
+    width: 100%;
+    display: flex;
+    border: 1px solid #d1d5da;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.imgDiv {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.imgDiv img {
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+}
+
+h1,
+p {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.repositoriesName {
+    color: #528bff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.account {
+    color: #586069;
+    font-size: 15px;
+}
+
+.userName {
+    color: #528bff;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: #d6d8da;
+}
+
+h1:hover,
+p:hover,
+a:hover {
+    color: #528bff;
+    text-decoration: underline;
+}
+
+.flex {
+    display: flex;
+}
+
+.btn-div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-div .btn {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    cursor: pointer;
+    color: #24292e;
+    background-color: #f5f8f9;
+    /* border: none;
+    border-style: none; */
+    border: 1px solid #e1e4e8;
+    outline: none;
+    width: 60px;
+    height: 25px;
+    border-radius: 3px;
+}
+
+.btn-div .btn:hover {
+    background-color: #e8edf2;
+}
+
+.col-8 {
+    width: 67%;
+    height: 100%;
+}
+
+.col-4 {
+    width: 33.3%;
+    height: 100%;
+}
+
+.col-6 {
+    width: 50%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    /* project id 1513682 */
+    src: url("//at.alicdn.com/t/font_1513682_xutag1t01dl.eot");
+    src: url("//at.alicdn.com/t/font_1513682_xutag1t01dl.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_1513682_xutag1t01dl.woff2") format("woff2"), url("//at.alicdn.com/t/font_1513682_xutag1t01dl.woff") format("woff"), url("//at.alicdn.com/t/font_1513682_xutag1t01dl.ttf") format("truetype"), url("//at.alicdn.com/t/font_1513682_xutag1t01dl.svg#iconfont") format("svg");
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 14px;
+    margin-right: 5px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}

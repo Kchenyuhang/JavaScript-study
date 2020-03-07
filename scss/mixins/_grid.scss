@@ -1,0 +1,127 @@
+@mixin flex {
+    display: flex !important;
+}
+
+@mixin flex-row {
+    flex-direction: row !important;
+}
+
+@mixin flex-column {
+    flex-direction: column !important;
+}
+
+@mixin flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+@mixin flex-nowrap {
+    flex-wrap: nowrap !important;
+}
+
+@mixin flex-grid($count) {
+    flex: 0 0 $count !important;
+}
+
+@mixin flex-grid-auto($count) {
+    flex: 1 1 $count !important;
+}
+
+@mixin justify-content-start {
+    justify-content: flex-start !important;
+}
+
+@mixin justify-content-end {
+    justify-content: flex-end !important;
+}
+
+@mixin justify-content-center {
+    justify-content: center !important;
+}
+
+@mixin justify-content-between {
+    justify-content: space-between !important;
+}
+
+@mixin justify-content-around {
+    justify-content: space-around !important;
+}
+
+@mixin align-items-start {
+    aligin-items: flex-start !important;
+}
+
+@mixin align-items-end {
+    aligin-items: flex-end !important;
+}
+
+@mixin align-items-center {
+    align-items: center !important;
+}
+
+@mixin align-items-baseline {
+    align-items: baseline !important;
+}
+
+@mixin align-items-stretch {
+    align-items: stretch !important;
+}
+
+@mixin gutter($value) {
+    margin: $value;
+}
+
+.row-wrap {
+    @include flex;
+    @include flex-row;
+    @include flex-wrap;
+    @include justify-content-start;
+    @include align-items-center;
+}
+
+.row-nowrap {
+    @include flex;
+    @include flex-row;
+    @include flex-nowrap;
+    @include justify-content-start;
+    @include align-items-center()
+}
+
+.col-12 {
+    @include flex-grid(98%);
+    @include gutter(5px);
+}
+
+.col-6 {
+    @include flex-grid(48%);
+    @include gutter(5px);
+}
+
+.col-4 {
+    @include flex-grid(32%);
+    @include gutter(5px);
+}
+
+.col-3 {
+    @include flex-grid(24%);
+    @include gutter(5px);
+}
+
+.col-12-auto {
+    @include flex-grid-auto(100%);
+    @include gutter(5px);
+}
+
+.col-6-auto {
+    @include flex-grid-auto(50%);
+    @include gutter(5px);
+}
+
+.col-4-auto {
+    @include flex-grid-auto(33.3%);
+    @include gutter(5px);
+}
+
+.col-3-auto {
+    @include flex-grid-auto(25);
+    @include gutter(5px);
+}

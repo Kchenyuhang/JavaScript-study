@@ -1,0 +1,16 @@
+@import "/scss/utilities/color";
+$min:180px;
+$middle:200px;
+$large:220px;
+
+.card-orange {
+    height: $middle;
+    background-color: $gm-Amber-700;
+    color: $gm-Amber-50;
+}
+
+.card-red {
+    height: $large;
+    background-color: $gm-Pink-300;
+    color: $gm-Blue-Grey-100;
+}
