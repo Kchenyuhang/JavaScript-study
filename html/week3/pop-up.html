@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <title>弹出框</title>
+  </head>
+  <body>
+    <!-- 将函数作为事件处理程序 -->
+    <input type="button" id="btn1" value="JS绑定" />
+    <br />
+    <!-- 直接在注册时间的对象的属性字符串中编写JS代码 -->
+    <input
+      type="button"
+      id="btn2"
+      onclick="alert('属性字符串中编写JS代码')"
+      value="属性字符串"
+    />
+    <br />
+    <!-- 再JS代码中动态绑定处理程序 -->
+    <input type="button" id="btn3" value="addEventListener" />
+
+    <script>
+        //JS绑定——btn1
+        let button1 = document.getElementById("btn1");
+        button1.onclick = function() {
+            alert("执行JS绑定事件")
+        }
+
+        //addEventListener
+        let butten2 = document.getElementById("btn3");
+        butten2.addEventListener("mouseover",fun1,false)
+        butten2.addEventListener("click",func2,false)
+        butten2.addEventListener("click",func3,false)
+        function fun1() {
+            alert(butten2)
+        }
+
+        function func2() {
+            alert(Date())
+        }
+
+        function func3() {
+            alert("-------------------")
+        }
+    </script>
+  </body>
+</html>

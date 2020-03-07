@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <title>弹出框——作业</title>
+  </head>
+  <body>
+      <button onclick="handleClick(this)" id="btn1">按钮1</button>
+      <button onclick="textClick(this)" id="btn2">按纽2</button>
+      <script>
+          function handleClick() {
+              var text = document.getElementById("btn1").textContent;
+              alert(text);
+          }
+
+          function textClick(text) {
+              alert(text.textContent);
+          }
+      </script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>求矩阵的最大值</title>
+    <title>求矩阵的最大值、最小值和平均值</title>
   </head>
   <body>
     <script>
@@ -23,6 +23,29 @@
         [9, 5, 10, 4]
       ];
       max(a);
+
+      function shuzu(arr) {
+        var sum = 0;
+        for (var i = 0; i < 3; i++) {
+          for (var j = 0; j < 4; j++) {
+            sum += arr[i][j];
+          }
+        }
+        var avg = sum / 12;
+        alert("平均值" + avg);
+      }
+
+      function min(arr) {
+        var min = arr[0][0];
+        for (var i = 0; i < 3; i++) {
+          for (var j = 0; j < 4; j++) {
+            if (min >= arr[i][j]) {
+              min = arr[i][j];
+            }
+          }
+        }
+        alert("最小值" + min);
+      }
     </script>
   </body>
 </html>
